@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<main id="container">
-			<header>
+			<header id="regular" class="">
 			  <h1>Get your <span id="jokeFactDad">joke</span><span id="jokeFactNorris" class="hide">FACTS</span></h1>
 			  <div class="toggle">
 			  <p>Dad</p>
@@ -24,18 +24,29 @@
 			<h2>Bad jokes included</h2>
 			<p>You've been warned</p>
 			</header>
-			<form id="joke">
+			<form id="joke" class="">
 			 	<div id="norris" class="hide">
 					<p id="jokeNorris"></p>
 					<button type="button" class="getJoke" id="getNorris">Get Chuck Norris <span>FACT</span></button>
 				</div>
 				<div id="dad" class="">
 					<p id="jokeDad"></p>
-					<h3 id="jokeDadPunch"></h3>
 					<button class="getJoke" id="getDad">Get Dad Joke</button>
 				</div>
 		  	</form>
+			<header id="leon" class="hide">
+				<h1>Get your LEON facts!</h1>
+				<h2>Bad jokes included</h2>
+				<p>You've been warned</p>
+			  </header>
+			  <form id="leonJoke" class="hide">
+				   <div>
+					  <p id="jokeLeon"></p>
+					  <button type="button" class="getJoke" id="getLeon">Get Leon <span>FACT</span></button>
+				  </div>
+				</form>
 		  </main>
+		  <input type="checkbox" id="bonus">
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

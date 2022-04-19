@@ -3,7 +3,7 @@
 #container{
   display: grid;
   position: relative;
-  grid-template-columns: 15% repeat(3, 1fr) 15%;
+  grid-template-columns: 15% repeat(5, 1fr) 15%;
 }
 
 #container::before{
@@ -27,6 +27,11 @@
   transition: 0.5s;
 }
 
+#container.leon::before{
+  background-image: url(../img/logo.jpg);
+  transition: 0.5s;
+}
+
 body {
   background-color: #121212;
   font-family: 'Roboto Serif', serif;
@@ -35,13 +40,12 @@ body {
 header{
   letter-spacing: 0.15rem;
   align-items: center;
-  grid-column:3/4;
-  grid-row: 1/2;
+  grid-column:3/6;
+  grid-row: 1/1;
   text-align: center;
-  padding: 0 0 10% 0;
   color:hsl(0, 0%, 100%);
   border-radius: 15px 15px 0 0;
-  background: linear-gradient(hsl(236, 72%, 79%, 0.4), hsla(237, 63%, 64%, 0.4) );
+  background: linear-gradient(hsl(236, 72%, 79%, 0.5), hsla(237, 63%, 64%, 0.5) );
 }
 
 header h1 {
@@ -58,9 +62,12 @@ form{
 
 .toggle{
   display: inline-flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  padding: 5% 0;
+}
+
+.toggle p {
+  padding: 0 5%;
 }
 
 .switch:focus-within {
@@ -95,6 +102,7 @@ form{
 
 .switch input{
   opacity: 0;
+  padding: 5%;
 }
 
 #toggle:checked + .slider{
@@ -117,7 +125,7 @@ form{
 }
 
 .background{
-  background: linear-gradient(rgba(240, 213, 163, 0.4), hsla(41, 63%, 64%, 0.4) ); 
+  background: linear-gradient(rgba(240, 213, 163, 0.5), hsla(41, 63%, 64%, 0.5) ); 
   }
 
 #joke.jokeBg {
@@ -129,14 +137,19 @@ form{
   text-align: center;
 }
 
-#joke{
-  grid-column: 3/4;
-  grid-row: 3/6;
-  background: linear-gradient(135deg, hsla(236, 72%, 79%, 0.7) 5%, hsla(237, 63%, 64%, 0.7) 100%);
+#joke, #leonJoke{
+  grid-column: 3/6;
+  grid-row: 2/3;
+  background: linear-gradient(135deg, hsla(236, 20%, 31%, 0.8) 5%, hsla(237, 47%, 18%, 0.8) 100%);
   border-radius: 0 0 15px 15px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-  color:hsl(237, 41%, 19%);
+  color:hsl(237, 100%, 95%);
   padding: 10% 10% 20% 10%;
+  text-shadow: #121212 2px 2px;
+}
+
+#joke p, #leonJoke p {
+  font-size: 1.5rem;
 }
 
 .getJoke {
@@ -169,8 +182,12 @@ form{
   color:hsl(19, 35%, 39%);
 }
 
-.hide{
+.hide {
   display: none;
+}
+
+.poof {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion) {
