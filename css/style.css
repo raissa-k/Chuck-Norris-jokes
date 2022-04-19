@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&family=Rye&family=Short+Stack&display=swap');
+
+#container{
+  display: grid;
+  position: relative;
+  grid-template-columns: 15% repeat(3, 1fr) 15%;
+}
+
+#container::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -1rem;
+  left: -1rem;
+  display: block;
+  background-image: url(../img/dad-jokes.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vmin;
+  width: 100vmax;
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+#container.chuck::before{
+  background-image: url(../img/chuck-jokes.jpg);
+  transition: 0.5s;
+}
+
+body {
+  background-color: #121212;
+  font-family: 'Roboto Serif', serif;
+}
+
+header{
+  letter-spacing: 0.15rem;
+  align-items: center;
+  grid-column:3/4;
+  grid-row: 1/2;
+  text-align: center;
+  padding: 0 0 10% 0;
+  color:hsl(0, 0%, 100%);
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(hsl(236, 72%, 79%, 0.4), hsla(237, 63%, 64%, 0.4) );
+}
+
+header h1 {
+  font-family: 'Short Stack', cursive;
+}
+
+header.background h1 {
+  font-family: 'Rye', cursive;
+}
+
+form{
+  grid-column:3/4;
+}
+
+.toggle{
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 5% 0;
+}
+
+.switch:focus-within {
+  outline: #121212 solid 0.2rem;
+  outline-offset: 0.2rem;
+}
+
+.switch{
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 35px;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right:0; bottom:0;
+  background:linear-gradient(hsl(0, 0%, 77%), hsl(48, 3%, 34%));
+  transition: .5s;
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  top: 4px;
+  right: 4px;
+  left: 4px;
+  background-color: hsl(0, 0%, 100%);
+  transition: .5s;
+}
+
+.switch input{
+  opacity: 0;
+}
+
+#toggle:checked + .slider{
+  background-color: hsl(0, 0%, 100%);
+}
+
+#toggle:checked + .slider:before{
+  transform: translateX(35px) rotateZ(180deg);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.slider.round{
+  border-radius: 35px;
+}
+
+.slider.round:before{
+  width: 27px;
+  height: 27px;
+  border-radius: 50px;
+}
+
+.background{
+  background: linear-gradient(rgba(240, 213, 163, 0.4), hsla(41, 63%, 64%, 0.4) ); 
+  }
+
+#joke.jokeBg {
+  background: linear-gradient(rgba(65, 42, 0, 0.8), rgba(44, 31, 12, 0.8) );
+  color: hsl(32, 100%, 97%);
+}
+
+form{
+  text-align: center;
+}
+
+#joke{
+  grid-column: 3/4;
+  grid-row: 3/6;
+  background: linear-gradient(135deg, hsla(236, 72%, 79%, 0.7) 5%, hsla(237, 63%, 64%, 0.7) 100%);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  color:hsl(237, 41%, 19%);
+  padding: 10% 10% 20% 10%;
+}
+
+.getJoke {
+  color:hsl(237, 33%, 42%);
+  font-family: 'Short Stack', cursive;
+  background:hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.jokeBg .getJoke {
+  color:hsl(24, 100%, 26%);
+  font-family: 'Rye', cursive;
+  font-size: 1.5rem;
+}
+.jokeBg .getJoke span {
+  font-size: 3rem;
+}
+
+.getJoke:hover{
+  color:hsl(237, 63%, 64%);
+  background: hsl(0, 0%, 100%);
+  border: 1px solid hsl(232, 13%, 33%);
+}
+
+.jokeBg .getJoke:hover{
+  color:hsl(19, 35%, 39%);
+}
+
+.hide{
+  display: none;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition: 0;
+  }
+}
