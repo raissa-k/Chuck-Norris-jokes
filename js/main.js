@@ -19,7 +19,7 @@ function fetchNorris(){
   }
 
   async function fetchDad() {
-    const response = await fetch("http://icanhazdadjoke.com", {
+    const response = await fetch("https://cors-everywhere.herokuapp.com/http://icanhazdadjoke.com", {
       headers: {
         Accept: "application/json",
       },
