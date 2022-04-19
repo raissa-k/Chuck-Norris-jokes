@@ -10,8 +10,8 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: -1rem;
-  left: -1rem;
+  top: 0;
+  left: 0;
   display: block;
   background-image: url(../img/dad-jokes.jpg);
   background-repeat: no-repeat;
@@ -202,6 +202,16 @@ form{
   flex-direction: column;
   position: relative;
 }
+
+#container::before{
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+}
+
+#container.chuck::before{
+  background-position: right;
+}
 }
 
 @media (min-width: 701px) and (max-width: 1024px){
@@ -209,6 +219,16 @@ form{
     display: grid;
     position: relative;
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  #container::before{
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+  }
+
+  #container.chuck::before{
+    background-position: right;
   }
 
 header{
