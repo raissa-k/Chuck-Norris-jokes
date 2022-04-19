@@ -1,4 +1,5 @@
 const toggle = document.getElementById('toggle')
+const jokeDad = document.getElementById('jokeDad')
 toggle.addEventListener('click', changeJoke)
 document.getElementById('getNorris').addEventListener('click', fetchNorris)
 document.getElementById('getDad').addEventListener('click', fetchDad)
@@ -17,26 +18,17 @@ function fetchNorris(){
       });
   }
 
-  function fetchDad(){
-    const options = {
-      method: 'GET',
+  async function fetchDad() {
+    const response = await fetch("http://icanhazdadjoke.com", {
       headers: {
-        'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com',
-        'X-RapidAPI-Key': 'e81e6f3e96msh5b3b5e7cad6d3ccp1e4dc5jsn4ef6feea3974'
-      }
-    }   
-      fetch('https://dad-jokes.p.rapidapi.com/random/joke', options)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('jokeDad').textContent = data.body.setup
-          document.getElementById('jokeDadPunch').textContent = data.body.punchline
-          console.log(data)
-        })
-        .catch(err => {
-            console.log(`error ${err}`)
-        });
-    }
-
+        Accept: "application/json",
+      },
+    });
+    const data = response.json();
+    jokeDad.textContent = data.joke
+    return data;
+  }
+  
 
 function changeJoke(){
   document.querySelector('header').classList.toggle('background');
