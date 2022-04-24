@@ -10,7 +10,7 @@ function fetchNorris(){
   const url = 'https://api.chucknorris.io/jokes/random?category=animal,career,fashion,history,movie,music,science,sport,travel'
   
     fetch(url)
-      .then(res => res.json()) // parse response as JSON
+      .then(res => res.json())
       .then(data => {
         document.getElementById('jokeNorris').textContent = data.value
       })

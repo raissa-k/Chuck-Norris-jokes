@@ -32,6 +32,11 @@
   transition: 0.5s;
 }
 
+a {
+  color: #cecece;
+  font-size: 0.8rem;
+}
+
 body {
   background-color: #121212;
   font-family: 'Roboto Serif', serif;
@@ -47,10 +52,17 @@ header{
   color:hsl(0, 0%, 100%);
   border-radius: 15px 15px 0 0;
   background: linear-gradient(hsl(236, 72%, 79%, 0.5), hsla(237, 63%, 64%, 0.5) );
+  margin-top: 1rem;
 }
 
 header h1 {
   font-family: 'Short Stack', cursive;
+  margin: 0;
+  padding: 5% 0;
+}
+
+header p {
+  padding-bottom: 5%;
 }
 
 header.background h1 {
@@ -145,7 +157,7 @@ form{
   border-radius: 0 0 15px 15px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   color:hsl(237, 100%, 95%);
-  padding: 10% 10% 20% 10%;
+  padding: 5% 5% 10% 5%;
   text-shadow: #121212 2px 2px;
 }
 
@@ -235,5 +247,9 @@ header{
 #joke, #leonJoke{
   grid-column: 2/5;
 }
+}
+
+#bonus, #bonusLabel {
+  opacity: 0.1;
 }
 
