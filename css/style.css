@@ -10,8 +10,8 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
-  left: 0;
+  top: -0.5rem;
+  left: -0.5rem;
   display: block;
   background-image: url(../img/dad-jokes.jpg);
   background-repeat: no-repeat;
@@ -35,6 +35,7 @@
 body {
   background-color: #121212;
   font-family: 'Roboto Serif', serif;
+  font-size: clamp(1rem, 0.45vw + 0.89rem, 1.25rem);
 }
 
 header{
@@ -148,29 +149,25 @@ form{
   text-shadow: #121212 2px 2px;
 }
 
-#joke p, #leonJoke p {
-  font-size: 1.5rem;
-}
-
 .getJoke {
   color:hsl(237, 33%, 42%);
   font-family: 'Short Stack', cursive;
+  font-size: clamp(1.25rem, 0.76vw + 1.06rem, 1.67rem);
   background:hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
   border-radius: 5px;
   cursor: pointer;
   padding: 0.5rem;
-  font-size: 1.5rem;
 }
 
 .jokeBg .getJoke {
   color:hsl(24, 100%, 26%);
   font-family: 'Rye', cursive;
-  font-size: 1.5rem;
 }
 .jokeBg .getJoke span {
-  font-size: 3rem;
+  font-size: clamp(1.95rem, 1.83vw + 1.5rem, 2.96rem);
 }
+
 
 .getJoke:hover{
   color:hsl(237, 63%, 64%);

@@ -13,7 +13,6 @@ function fetchNorris(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         document.getElementById('jokeNorris').textContent = data.value
-        console.log(data)
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -27,7 +26,6 @@ function fetchNorris(){
         .then(res => res.json()) // parse response as JSON
         .then(data => {
           document.getElementById('jokeLeon').textContent = data.value
-          console.log(data)
         })
         .catch(err => {
             console.log(`error ${err}`)
@@ -41,7 +39,7 @@ function fetchNorris(){
         }
       });
       const joke = await jokeRes.json();
-      jokeDad.innerHTML = joke.joke;
+      jokeDad.textContent = joke.joke;
     }
     
   
