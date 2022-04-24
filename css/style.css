@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&family=Rye&family=Short+Stack&display=swap');
 
 #container{
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
+  flex-direction: column;
+  width: min(90%, 400px + 10vw);
+  height: fit-content;
+  margin: auto;
 }
 
 #container::before{
   content: "";
   position: absolute;
   z-index: -1;
-  top: -0.5rem;
-  left: -0.5rem;
+  top: 0;
+  left: 0;
   display: block;
   background-image: url(../img/dad-jokes.jpg);
   background-repeat: no-repeat;
@@ -33,7 +35,7 @@
 }
 
 a {
-  color: #cecece;
+  color: #cecece59;
   font-size: 0.8rem;
 }
 
@@ -46,13 +48,12 @@ body {
 header{
   letter-spacing: 0.15rem;
   align-items: center;
-  grid-column:3/6;
-  grid-row: 1/1;
   text-align: center;
   color:hsl(0, 0%, 100%);
   border-radius: 15px 15px 0 0;
   background: linear-gradient(hsl(236, 72%, 79%, 0.5), hsla(237, 63%, 64%, 0.5) );
   margin-top: 1rem;
+  padding: 5%;
 }
 
 header h1 {
@@ -61,22 +62,21 @@ header h1 {
   padding: 5% 0;
 }
 
-header p {
-  padding-bottom: 5%;
+header h2, header p {
+  margin: 0;
+  padding-top: 5%;
 }
 
 header.background h1 {
   font-family: 'Rye', cursive;
 }
 
-form{
-  grid-column:3/6;
-}
-
 .toggle{
   display: inline-flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 2% 0;
 }
 
 .toggle p {
@@ -151,14 +151,12 @@ form{
 }
 
 #joke, #leonJoke{
-  grid-column:3/6;
-  grid-row: 2/3;
   background: linear-gradient(135deg, hsla(236, 20%, 31%, 0.8) 5%, hsla(237, 47%, 18%, 0.8) 100%);
   border-radius: 0 0 15px 15px;
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   color:hsl(237, 100%, 95%);
   padding: 5% 5% 10% 5%;
-  text-shadow: #121212 2px 2px;
+  text-shadow: #1212124d 2px 2px;
 }
 
 .getJoke {
@@ -170,6 +168,7 @@ form{
   border-radius: 5px;
   cursor: pointer;
   padding: 0.5rem;
+  margin-top: 2%;
 }
 
 .jokeBg .getJoke {
@@ -179,7 +178,6 @@ form{
 .jokeBg .getJoke span {
   font-size: clamp(1.95rem, 1.83vw + 1.5rem, 2.96rem);
 }
-
 
 .getJoke:hover{
   color:hsl(237, 63%, 64%);
@@ -195,8 +193,17 @@ form{
   display: none;
 }
 
-.poof {
-  opacity: 0;
+.github {
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+#bonus, #bonusLabel {
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media (prefers-reduced-motion) {
@@ -204,32 +211,7 @@ form{
     transition: 0;
   }
 }
-@media screen and (max-width: 700px){
-  #container{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-#container::before{
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-}
-
-#container.chuck::before{
-  background-position: right;
-}
-}
-
-@media (min-width: 701px) and (max-width: 1024px){
-  #container{
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(5, 1fr);
-  }
-
+@media screen and (max-width: 1024px){
   #container::before{
     height: 100vh;
     width: 100vw;
@@ -239,17 +221,5 @@ form{
   #container.chuck::before{
     background-position: right;
   }
-
-header{
-  grid-column:2/5;
-}
-
-#joke, #leonJoke{
-  grid-column: 2/5;
-}
-}
-
-#bonus, #bonusLabel {
-  opacity: 0.1;
 }
 
